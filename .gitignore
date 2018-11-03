@@ -1,0 +1,9 @@
+
+.gitattributes
+.yo-rc.json
+
+.package-lock.json
+
+node_modules
+coverage
+bower_components
