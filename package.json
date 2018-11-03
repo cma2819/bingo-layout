@@ -1,0 +1,45 @@
+{
+  "name": "zelda-party",
+  "version": "0.0.0",
+  "description": "Layout for Zelda-Party Event",
+  "homepage": "",
+  "author": {
+    "name": "cma",
+    "email": "yamanaka-team@hotmail.co.jp",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "dashboardPanels": [
+      {
+        "name": "zelda-party",
+        "title": "Zelda Party",
+        "width": 4,
+        "file": "index.html",
+        "headerColor": "#bcbcff"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.88.0"
+  }
+}
