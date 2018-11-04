@@ -50,8 +50,8 @@ bundles
 ## NodeCGの起動
 NodeCGをインストールしたフォルダで、以下のコマンドを入力し、NodeCGを起動します。
 
-'''
+```
 > node index.js
-'''
+```
 
 表示されるlocalhostのアドレスにアクセスすることで、操作が可能になります。
