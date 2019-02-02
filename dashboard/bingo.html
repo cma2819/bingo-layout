@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<link src="bingo.css" rel="stylesheet" />
+	<style>
+		:root {
+			--theme-color: #bcbcff;
+			--normal-color: #000000;
+			--hidden-color: #aaaaaa;
+		}
+		.monospace {
+    		font-family: monospace;
+		}
+		h2, h3 {
+			color: var(--hidden-color);
+			margin: 0px 0.5em;
+			border-bottom: 1px solid var(--hidden-color);
+		}
+		label {
+            font-weight: bold;
+            margin-right: 1em;
+        }
+
+        input,
+        select {
+            border: none;
+            border-radius: 5px;
+            background-color: #ffffff;
+            font-size: 100%;
+            padding: 0.5em 0.2em;
+        }
+		.panel {
+			border: 2px solid var(--theme-color);
+			color: #000000;
+			background-color: #dddddd;
+			border-radius: 5px;
+			margin: 2px;
+			padding: 5px;
+		}
+		.panel a {
+			text-decoration: none;
+			color:#bcbcff;
+		}
+
+		.panel div.text input {
+			display:block;
+		}
+
+		#buttons {
+			border-top: 1px solid #bcbcff;
+			text-align:right;
+		}
+		button {
+			border:1px solid var(--theme-color);
+            border-radius: 5px;
+			color:#8a8aff;
+			font-size: 100%;
+			font-weight: bold;
+			background-color:#ffffff;
+			text-align:center;
+            padding: 0.2em 0.5em;
+		}
+		button:active {
+			background-color: var(--hidden-color);
+		}
+        input:disabled, button:disabled {
+            background-color: var(--hidden-color);
+        }
+
+		#runners, #timekeeper {
+			float: left;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="bingo.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/riot@3.13/riot+compiler.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/riot-route@3.1.2/dist/route.min.js"></script>
+
+    <script src="./tag/basis.tag" type="riot/tag"></script>
+	<script src="./tag/runners.tag" type="riot/tag"></script>
+	<script src="./tag/runner.tag" type="riot/tag"></script>
+	<script src="./tag/timekeeper.tag" type="riot/tag"></script>
+	
+</head>
+
+<body>
+	<div id="basis" class="panel">
+		<basis></basis>
+	</div>
+	<div id="runners" class="panel">
+		<runners></runners>
+	</div>
+	<div id="timekeeper" class="panel">
+		<timekeeper></timekeeper>
+	</div>
+</body>
+<script>
+	
+	/* Define Observer, it send the data to riot tags */
+	const observer = riot.observable(); // This is given when riot.mount on html
+	riot.mount('*', { observer: observer })
+</script>
+
+</html>
