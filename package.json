@@ -27,11 +27,23 @@
         "width": 4,
         "file": "index.html",
         "headerColor": "#bcbcff"
+      },
+      {
+        "name": "Bingo",
+        "title": "bingo-layout",
+        "file": "bingo.html",
+        "headerColor": "#bcbcff",
+        "fullbleed": true
       }
     ],
     "graphics": [
       {
         "file": "index.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "bingo.html",
         "width": 1280,
         "height": 720
       }

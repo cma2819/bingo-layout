@@ -21,8 +21,8 @@ module.exports = nodecg => {
                 bingoMap.value = {};
             }
             bingoMap.value[seed] = bingoList;
-            return ;
         }
-        return ;
+        await page.close();
+        return 0;
     });
 }

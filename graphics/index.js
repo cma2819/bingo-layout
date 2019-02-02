@@ -94,7 +94,9 @@ function editPanelforBingo(ele, i) {
 
     /* Call function for getting Bingo List */
     if (seed) {
-        nodecg.sendMessage('getBingoList', seed);
+        nodecg.sendMessage('getBingoList', seed, () => {
+            return;
+        });
     }
 }
 

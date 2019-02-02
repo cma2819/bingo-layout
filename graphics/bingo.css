@@ -1,0 +1,41 @@
+:root {
+    --default-color:#aaaaaa;
+    --background-color:rgba(0,0,0,0);
+    --border:solid 4px var(--default-color);
+    --shadowing:black 2px 0px,  black -2px 0px,
+                black 0px -2px, black 0px 2px,
+                black 2px 2px , black -2px 2px,
+                black 2px -2px, black -2px -2px,
+                black 1px 2px,  black -1px 2px,
+                black 1px -2px, black -1px -2px,
+                black 2px 1px,  black -2px 1px,
+                black 2px -1px, black -2px -1px;
+}
+body {
+    width: 1280px;
+    height: 720px;
+    margin: 0px;
+    padding: 0px;
+}
+
+div#left, div#right {
+    height: 100%;
+    position: absolute;
+}
+
+div#left {
+    top: 0px;
+    left: 0px;
+}
+div#right {
+    top: 0px;
+    right: 0px;
+}
+
+div.r2 {
+    width: 640px;
+}
+
+div.r3 {
+    width: 426px;
+}
