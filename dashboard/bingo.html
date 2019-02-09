@@ -98,10 +98,15 @@
 	</div>
 </body>
 <script>
-	
-	/* Define Observer, it send the data to riot tags */
-	const observer = riot.observable(); // This is given when riot.mount on html
-	riot.mount('*', { observer: observer })
+	// Replicant
+	const observer = riot.observable();
+	nodecg.readReplicant('title', value => {
+		riot.mount('basis', { observer: observer, title: value });
+	})
+	nodecg.readReplicant('runners', value => {
+		riot.mount('runners', { observer: observer, runners: value});
+		riot.mount('timekeeper', { observer: observer, runners: value});
+	})
 </script>
 
 </html>

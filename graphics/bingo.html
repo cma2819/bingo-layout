@@ -6,27 +6,29 @@
     <title>ゼルダ交流会 - 時のオカリナ</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script src="bingo.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/riot@3.13/riot+compiler.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/riot-route@3.1.2/dist/route.min.js"></script>
 
     <script src="./tag/panels.tag" type="riot/tag"></script>
+    <script src="./tag/bingo.tag" type="riot/tag"></script>
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="bingo.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="left" class="r3">
-        <video-view></video-view>
-        <video-view></video-view>
-        <video-view></video-view>
+    <div id="left" class="frame">
+        <video-view id="left-view"></video-view>
     </div>
-    <div id="right" class="r3">
-        <video-view></video-view>
+    <div id="bingoview" class="info">
+        <bingo></bingo>
+    </div>
+    <div id="right" class="frame">
+        <video-view id="right-view"></video-view>
     </div>
 </body>
 <script>
-    riot.mount('*');
 </script>
 
 </html>

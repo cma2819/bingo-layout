@@ -18,7 +18,7 @@ body {
     padding: 0px;
 }
 
-div#left, div#right {
+div.frame, div.info {
     height: 100%;
     position: absolute;
 }
@@ -32,10 +32,22 @@ div#right {
     right: 0px;
 }
 
-div.r2 {
-    width: 640px;
+div.frame.r2 {
+    width: 512px;
 }
 
-div.r3 {
+div.frame.r3 {
     width: 426px;
+}
+
+div.info.r2 {
+    width: 272px;
+    top: 0px;
+    left: 512px;
+}
+
+div.info.r3 {
+    width: 428px;
+    top: 0px;
+    left: 426px;
 }

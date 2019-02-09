@@ -1,7 +1,7 @@
 <video-view>
-    <div class="r2">
+    <div class="{rowClass}" each="{runner in runners}">
         <span class="info" show="{video_info}">{video_info}</span>
-        <span class="name" show="{video_name}">{video_name}</span>
+        <span class="name" show="{runner.name}">{runner.name}</span>
     </div>
 
     <style>
@@ -50,5 +50,17 @@
     </style>
 
     <script>
+        this.runners = opts.runners;
+        this.rowClass = opts.rows;
+        this.type = opts.type;
+
+        // 走者情報変更時
+        observer.on('update-runners', data => {
+            if (this.type == data.type) {
+                this.runners = data.runners;
+                this.rows = data.rows;
+            }
+            this.update();
+        })
     </script>
 </video-view>

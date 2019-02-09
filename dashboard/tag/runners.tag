@@ -29,21 +29,11 @@
     </style>
     <script>
         // 初期化
-        this.runners = [
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {}
-        ] // あとでちゃんとReplicantから取得する
+        this.runners = opts.runners;
         
         // 子要素たちの更新を検知する
         observer.on('update-runner', (runneridx, runner) => {
             this.runners[runneridx] = runner;
-            console.log(runner);
         });
 
         // クリアボタン押下時イベントハンドラ

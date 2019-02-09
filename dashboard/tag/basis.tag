@@ -2,7 +2,7 @@
     <h2>Basic Information</h2>
     <div class="basis-input">
         <label>タイトル
-            <input type="text" name="title" size="60" /></label>
+            <input type="text" name="title" size="60" value="{opts.title}" /></label>
         <label>ゲーム
             <select name="game" onchange="{ changeGame }">
                 <option each={game,i in gameList} value="{i}">{game.name}</option>

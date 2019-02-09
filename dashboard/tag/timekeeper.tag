@@ -45,16 +45,7 @@
         this.isAllReady = false;
         this.isTimerWorking = false;
 
-        this.runners = [
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {}
-        ]
+        this.runners = opts.runners;
 
         readyAllRunners (e) {
             observer.trigger('ready-all-runners', true);
@@ -74,19 +65,12 @@
         // Ready状態変化時に発火
         observer.on('update-ready', (runneridx, state) => {
             this.runners[runneridx].ready = state;
-            const allready = checkAllReady(this.runners);
             this.update({ isAllReady:checkAllReady(this.runners) });
         });
 
         // Runners情報更新時に発火（有効走者のカウント）
         observer.on('update-runners-info', (runners) => {
-            for (var i = 0; i < this.runners.length; i++) {
-                if (runners[i].name) {
-                    this.runners[i].enable = true;
-                } else {
-                    this.runners[i].enable = false;
-                }
-            }
+            this.runners = runners;
             this.update({ isAllReady:checkAllReady(this.runners) });
         });
 
@@ -97,7 +81,6 @@
             let enableFlg = false;
             for (var i = 0; i < runners.length; i++) {
                 enableFlg = enableFlg || runners[i].enable;
-                console.log(enableFlg);
                 if (runners[i].enable && !runners[i].ready) {
                     return false;
                 }
