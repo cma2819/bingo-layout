@@ -31,23 +31,31 @@ div#right {
     top: 0px;
     right: 0px;
 }
-
-div.frame.r2 {
-    width: 512px;
+div#center.r2 {
+    top: 432px;
+    left: 513px;
+}
+div#center.r3 {
+    top: 480px;
+    left: 427px;
 }
 
+div.frame.r2 {
+    width: 576px;
+}
 div.frame.r3 {
     width: 426px;
 }
-
+/*
 div.info.r2 {
     width: 272px;
-    top: 0px;
+    top: 120px;
     left: 512px;
 }
-
-div.info.r3 {
+*/
+div.info {
+    z-index: 99;
     width: 428px;
-    top: 0px;
+    top: 60px;
     left: 426px;
 }

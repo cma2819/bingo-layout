@@ -1,7 +1,7 @@
 <video-view>
-    <div class="{rowClass}" each="{runner in runners}">
-        <span class="info" show="{video_info}">{video_info}</span>
-        <span class="name" show="{runner.name}">{runner.name}</span>
+    <div class="{rowClass} {type}" each="{runner in runners}" style="border-color:{colors[runner.color]}">
+        <span class="info" show="{video_info}" style="background-color:{colors[runner.color]}">{video_info}</span>
+        <span class="name" show="{runner.name}" style="background-color:{colors[runner.color]}">{runner.name}</span>
     </div>
 
     <style>
@@ -10,6 +10,7 @@
             padding: 0px;
             overflow: auto;
         }
+
         div {
             border-width: 2px 4px;
             border-style: solid;
@@ -18,10 +19,12 @@
             position: relative;
             margin: 0px;
         }
+
         div.r2 {
-            width: 504px;
-            height: 284px;
+            width: 568px;
+            height: 320px;
         }
+
         div.r3 {
             width: 418px;
             height: 236px;
@@ -29,27 +32,34 @@
 
         span {
             position: absolute;
-            padding: 0px 0.5em;
+            padding: 1px 0.5em;
             background-color: var(--default-color);
-            border-width: 2px;
+            border-width: 1px;
             border-style: solid;
-            border-color: var(--default-color);
+            border-color: #ffffff;
             font-size: 18px;
             color: #ffffff;
             text-shadow: var(--shadowing);
         }
 
-        span.info {
-            top: 2%;
+        .left span {
             left: 2%;
         }
+        .right span, .center span {
+            right: 2%;
+        }
+
+        span.info {
+            top: 2%;
+        }
+
         span.name {
             bottom: 2%;
-            right: 2%;
         }
     </style>
 
     <script>
+        this.colors = ["#aaaaaa", "#ff4444", "#44ff44", "#4444ff"]
         this.runners = opts.runners;
         this.rowClass = opts.rows;
         this.type = opts.type;
@@ -58,9 +68,48 @@
         observer.on('update-runners', data => {
             if (this.type == data.type) {
                 this.runners = data.runners;
-                this.rows = data.rows;
+                this.rowClass = data.rows;
             }
             this.update();
         })
     </script>
 </video-view>
+
+<info-view show="{enable}">
+    <div>
+        {data}
+    </div>
+    <style>
+        info-view {
+            font-size: 18px;
+            margin: 0px;
+            padding: 0px;
+            overflow: auto;
+            color: #ffffff;
+            width: 100%;
+        }
+        
+        div {
+            width:95%;
+            margin: 0.2em auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid #ffffff;
+            text-align: center;
+        }
+    </style>
+    <script>
+        this.data = opts.data;
+        this.enable = opts.enable;
+
+        observer.on('update-info', data => {
+            this.data = data;
+            this.update();
+        })
+
+        observer.on('update-title-enable', enable => {
+            console.log(enable);
+            this.enable = enable;
+            this.update();
+        })
+    </script>
+</info-view>

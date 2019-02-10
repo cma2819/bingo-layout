@@ -2,8 +2,9 @@
 
 // Replicant
 const title = nodecg.Replicant('title', {defaultValue: ""});
-const runners = nodecg.Replicant('runners', {defaultValue: []});
+const runners = nodecg.Replicant('runners', {defaultValue: [{},{},{},{},{},{},{},{}]});
 const bingoList = nodecg.Replicant('bingoList', {defaultValue: []});
+const options = nodecg.Replicant('options', {defaultValue: {}});
 
 riot.update({title: title.value, runners: runners.value});
 
@@ -44,4 +45,12 @@ observer.on('update-runners-info', (runnersInfo) => {
         }
     }
     runners.value = runnersInfo;
+});
+
+/*
+    オプション情報の更新
+*/
+observer.on('update-option', option => {
+    // optionのキーに値をセット
+    options.value[option.name] = option.checked;
 });

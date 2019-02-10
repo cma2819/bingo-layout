@@ -1,4 +1,4 @@
-<bingo>
+<bingo show="{enable}">
     <table class="{rowClass}">
         <tr each="{row, i in rows}">
             <td each="{task, j in row}" id="slot{i*5 + (j+1)}" class="slot c_0" onclick="{toggleColor}">{task}</td>
@@ -11,59 +11,56 @@
             border-collapse: collapse;
         }
 
+        table.r3 {
+            height: 428px;
+        }
+
         .slot {
             width: 85px;
-            height: 85px;
+            height: 82px;
+            font-size: 10px;
             padding: 2px;
             border: 0.2px solid white;
             text-align: center;
             vertical-align: middle;
         }
 
-        .r2 .slot {
-            font-size: 8px;
-            width: 54px;
-            height: 54px;
-        }
-        .r3 .slot {
-            font-size: 14px;
-        }
-
         .slot.c_0 {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         .slot.c_0:hover {
-            background-color: rgba(32, 32, 32, 0.7);
+            background-color: rgba(32, 32, 32, 0.8);
         }
 
         .slot.c_1 {
-            background-color: rgba(0, 128, 0, 0.7);
+            background-color: rgba(0, 128, 0, 0.8);
         }
 
         .slot.c_1:hover {
-            background-color: rgba(32, 160, 32, 0.7);
+            background-color: rgba(32, 160, 32, 0.8);
         }
 
         .slot.c_2 {
-            background-color: rgba(128, 0, 0, 0.7);
+            background-color: rgba(128, 0, 0, 0.8);
         }
 
         .slot.c_2:hover {
-            background-color: rgba(160, 32, 32, 0.7);
+            background-color: rgba(160, 32, 32, 0.8);
         }
 
         .slot.c_3 {
-            background-color: rgba(0, 0, 128, 0.7);
+            background-color: rgba(0, 0, 128, 0.8);
         }
 
         .slot.c_3:hover {
-            background-color: rgba(32, 32, 160, 0.7);
+            background-color: rgba(32, 32, 160, 0.8);
         }
     </style>
     <script>
         this.rows = makeRows(opts.bingoList);
         this.rowClass = opts.rowClass;
+        this.enable = opts.enable;
 
         observer.on('update-bingo', bingo => {
             this.rows = makeRows(bingo);
@@ -72,6 +69,11 @@
 
         observer.on('update-class', rowClass => {
             this.rowClass = rowClass;
+            this.update();
+        })
+
+        observer.on('update-bingo-enable', enable => {
+            this.enable = enable;
             this.update();
         })
 

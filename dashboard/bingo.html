@@ -69,7 +69,7 @@
             background-color: var(--hidden-color);
         }
 
-		#runners, #timekeeper {
+		#runners, #timekeeper, #options {
 			float: left;
 		}
 	</style>
@@ -83,6 +83,7 @@
 	<script src="./tag/runners.tag" type="riot/tag"></script>
 	<script src="./tag/runner.tag" type="riot/tag"></script>
 	<script src="./tag/timekeeper.tag" type="riot/tag"></script>
+	<script src="./tag/options.tag" type="riot/tag"></script>
 	
 </head>
 
@@ -96,6 +97,9 @@
 	<div id="timekeeper" class="panel">
 		<timekeeper></timekeeper>
 	</div>
+	<div id="options" class="panel">
+		<options></options>
+	</div>
 </body>
 <script>
 	// Replicant
@@ -106,6 +110,9 @@
 	nodecg.readReplicant('runners', value => {
 		riot.mount('runners', { observer: observer, runners: value});
 		riot.mount('timekeeper', { observer: observer, runners: value});
+	})
+	nodecg.readReplicant('options', value => {
+		riot.mount('options', {observer: observer, options: value});
 	})
 </script>
 
