@@ -46,6 +46,18 @@ bundles
 
 以上でインストールは終了（のはず）です。
 
+## 設定ファイルの追加
+本レイアウト実行に必要なファイルを格納します。
+`zelda-party`フォルダ直下にある`zelda-party.json`を、NodeCGフォルダ直下の`cfg`フォルダに格納してください。
+
+```
++ NodeCG
+  + bundles
+  + cfg
+    - zelda-party.json
+  + ...
+```
+
 ## NodeCGの起動
 NodeCGをインストールしたフォルダで、以下のコマンドを入力し、NodeCGを起動します。
 
