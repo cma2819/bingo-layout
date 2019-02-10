@@ -1,0 +1,7 @@
+{
+    "modeList":[
+        ["video",["4:3","16:9"]],
+        ["bingo",["oot"]],
+        ["text",["left","center","right"]]
+    ]
+}

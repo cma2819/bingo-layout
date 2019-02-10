@@ -37,12 +37,11 @@ bundles
   └─・・・
 ```
 
-格納したら、「zelda-party」フォルダでコマンドプロンプトを起動し、「npm install」及び「bower install」を実行してください。
+格納したら、「zelda-party」フォルダでコマンドプロンプトを起動し、「npm install」を実行してください。
 
 ```
 > cd \bundles\zelda-party
 > npm install
-> bower install
 ```
 
 以上でインストールは終了（のはず）です。
