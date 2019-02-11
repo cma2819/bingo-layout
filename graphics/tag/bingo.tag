@@ -18,7 +18,7 @@
         .slot {
             width: 85px;
             height: 82px;
-            font-size: 10px;
+            font-size: 12px;
             padding: 2px;
             border: 0.2px solid white;
             text-align: center;
@@ -26,35 +26,35 @@
         }
 
         .slot.c_0 {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 1.0);
         }
 
         .slot.c_0:hover {
-            background-color: rgba(32, 32, 32, 0.8);
+            background-color: rgba(32, 32, 32, 1.0);
         }
 
         .slot.c_1 {
-            background-color: rgba(0, 128, 0, 0.8);
+            background-color: rgba(0, 128, 0, 1.0);
         }
 
         .slot.c_1:hover {
-            background-color: rgba(32, 160, 32, 0.8);
+            background-color: rgba(32, 160, 32, 1.0);
         }
 
         .slot.c_2 {
-            background-color: rgba(128, 0, 0, 0.8);
+            background-color: rgba(128, 0, 0, 1.0);
         }
 
         .slot.c_2:hover {
-            background-color: rgba(160, 32, 32, 0.8);
+            background-color: rgba(160, 32, 32, 1.0);
         }
 
         .slot.c_3 {
-            background-color: rgba(0, 0, 128, 0.8);
+            background-color: rgba(0, 0, 128, 1.0);
         }
 
         .slot.c_3:hover {
-            background-color: rgba(32, 32, 160, 0.8);
+            background-color: rgba(32, 32, 160, 1.0);
         }
     </style>
     <script>

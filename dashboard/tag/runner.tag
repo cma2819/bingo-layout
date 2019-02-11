@@ -92,10 +92,10 @@
     <label> READY
         <input type="checkbox" name="ready" val="1" onchange="{ changeReadyState }" disabled="{ !runner.enable}" />
     </label>
-    <input type="text" size="8" readonly="readonly" value="-" disabled="{ !runner.enable }"/>
+    <input type="text" size="8" readonly="readonly" value="{ time }" disabled="{ !runner.enable }"/>
     <input type="number" min="0" max="5" placeholder="0" />
-    <button class="runner-finish">Finish</button>
-    <button class="runner-resume">Resume</button>
+    <button class="runner-finish" onclick="{finish}">Finish</button>
+    <button class="runner-resume" onclick="{resume}">Resume</button>
 
     <style>
         h3 {
@@ -134,6 +134,7 @@
         // 初期化
         this.runner = opts.data;
         this.runneridx = opts.runner_idx;
+        this.time = opts.data.time || '-';
 
         // Readyの命令受信時
         observer.on('ready-all-runners', (state) => {
@@ -144,6 +145,22 @@
         changeReadyState (e) {
             const ischecked = e.currentTarget.checked;
             observer.trigger('update-ready', this.runneridx, ischecked);
+        }
+
+        finish (e) {
+            console.log(this.runneridx);
+            observer.trigger('update-finish-runner', this.runneridx);
+        }
+
+        observer.on('send-time', data => {
+            if (data.idx == this.runneridx) {
+                this.update({time: data.time});
+            }
+        })
+
+        resume (e) {
+            this.update({time: '-'});
+            observer.trigger('update-resume-runner', this.runneridx);
         }
     </script>
 </runner-timer>

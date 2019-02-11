@@ -15,10 +15,11 @@
     <script>
         this.options = [
             {name: 'title_enable', label:'タイトル表示'},
-            { name: 'bingo_enable', label: 'ビンゴ表示' }
+            {name: 'bingo_enable', label: 'ビンゴ表示' },
+            {name: 'time_enable', label: 'タイム表示'}
         ];// 設定ファイル化する
 
-        this.values = {}; // option.nameでひもづくMap
+        this.values = opts.options || {}; // option.nameでひもづくMap
 
         changeCheck(e) {
             const name = e.currentTarget.name;

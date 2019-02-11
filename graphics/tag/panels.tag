@@ -1,6 +1,6 @@
 <video-view>
     <div class="{rowClass} {type}" each="{runner in runners}" style="border-color:{colors[runner.color]}">
-        <span class="info" show="{video_info}" style="background-color:{colors[runner.color]}">{video_info}</span>
+        <span class="info" show="{runner.time}" style="background-color:{colors[runner.color]}">{runner.time}</span>
         <span class="name" show="{runner.name}" style="background-color:{colors[runner.color]}">{runner.name}</span>
     </div>
 
@@ -40,6 +40,9 @@
             font-size: 18px;
             color: #ffffff;
             text-shadow: var(--shadowing);
+        }
+        span.info {
+            font-size: large;
         }
 
         .left span {

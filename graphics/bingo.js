@@ -6,7 +6,8 @@ const observer = riot.observable();
 const title = nodecg.Replicant('title');
 const runners = nodecg.Replicant('runners');
 const bingoList = nodecg.Replicant('bingoList');
-const options = nodecg.Replicant('options')
+const options = nodecg.Replicant('options');
+const stopwatch = nodecg.Replicant('stopwatch');
 
 // 初期処理
 let _rowClass;
@@ -24,14 +25,18 @@ nodecg.readReplicant('runners', value => {
     riot.mount('#center-view', { runners: center_runners, rows: rowClass, type: 'center' });
     _rowClass = rowClass;
 });
-nodecg.readReplicant('bingoList', value => {
-    nodecg.readReplicant('options', option => {
+
+nodecg.readReplicant('options', option => {
+    nodecg.readReplicant('bingoList', value => {
         riot.mount('bingo', { bingoList: value, rowClass: _rowClass, enable: option['bingo_enable'] });
-    })
-});
-nodecg.readReplicant('title', value => {
-    nodecg.readReplicant('options', option => {
+    });
+    nodecg.readReplicant('title', value => {
         riot.mount('info-view', { data: value, enable: option['title_enable'] });
+    });
+    nodecg.readReplicant('stopwatch', value => {
+        const formatted_time = value.time.formatted.split('.')[0];
+        const state = value.state;
+        riot.mount('time', { time: formatted_time, state: state, enable: option['time_enable'] });
     })
 });
 
@@ -64,10 +69,18 @@ bingoList.on('change', newVal => {
     observer.trigger('update-bingo', newVal);
 });
 
+// タイム変更時
+stopwatch.on('change', newVal => {
+    const formatted_time = newVal.time.formatted.split('.')[0];
+    const state = newVal.state;
+    observer.trigger('time-changed', {time: formatted_time, state: state});
+})
+
 // オプション情報更新
 options.on('change', newVal => {
     observer.trigger('update-bingo-enable', newVal['bingo_enable']);
     observer.trigger('update-title-enable', newVal['title_enable']);
+    observer.trigger('update-time-enable', newVal['time_enable']);
 })
 
 function calcRunnerList(runners) {

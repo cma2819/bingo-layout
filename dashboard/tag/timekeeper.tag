@@ -1,10 +1,10 @@
 <timekeeper>
     <div id="top">
         <h2>Time</h2>
-        <div id="time">00:00:00</div>
-        <button disabled={ !isAllReady || isTimerWorking }>Start</button>
-        <button disabled={ false }>Reset</button>
-        <button disabled={ !isTimerWorking }>Finish</button>
+        <div id="time">{time || '00:00.0'}</div>
+        <button disabled={ !isAllReady || isTimerWorking } onclick="{start}">Start</button>
+        <button disabled={ false } onclick="{reset}">Reset</button>
+        <button disabled={ !isTimerWorking } onclick="{stop}">Finish</button>
     </div>
     <div class="runner-time" each="{runner, i in runners}">
         <runner-timer runner_idx="{i}" data="{runner}"></runner-timer>
@@ -62,6 +62,21 @@
             this.isAllReady = checkAllReady(this.runners);
         }
 
+        start (e) {
+            observer.trigger('time-start');
+            this.isTimerWorking = true;
+        }
+
+        stop (e) {
+            observer.trigger('time-stop');
+            this.isTimerWorking = false;
+        }
+
+        reset (e) {
+            observer.trigger('time-reset');
+            this.isTimerWorking = false;
+        }
+
         // Ready状態変化時に発火
         observer.on('update-ready', (runneridx, state) => {
             this.runners[runneridx].ready = state;
@@ -73,6 +88,11 @@
             this.runners = runners;
             this.update({ isAllReady:checkAllReady(this.runners) });
         });
+
+        // Timeをプレビューする
+        observer.on('time-changed', formatted_time => {
+            this.update({time: formatted_time});
+        })
 
         // 全員準備完了かどうかチェック
         // 名前が入っていないプレイヤーは見ない

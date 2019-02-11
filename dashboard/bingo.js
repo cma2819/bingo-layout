@@ -6,7 +6,13 @@ const runners = nodecg.Replicant('runners', {defaultValue: [{},{},{},{},{},{},{}
 const bingoList = nodecg.Replicant('bingoList', {defaultValue: []});
 const options = nodecg.Replicant('options', {defaultValue: {}});
 
-riot.update({title: title.value, runners: runners.value});
+nodecg.readReplicant('title', title => {
+    nodecg.readReplicant('runners', runners => {
+        nodecg.readReplicant('options', options => {
+            riot.update({title: title, runners: runners});
+        })
+    })
+})
 
 /*
     基本情報の更新
@@ -46,6 +52,22 @@ observer.on('update-runners-info', (runnersInfo) => {
     }
     runners.value = runnersInfo;
 });
+
+/*
+    走者Finish時
+*/
+observer.on('update-finish-runner', runnerIdx => {
+    const time = stopwatch.value.time.formatted;
+    runners.value[runnerIdx].time = time;
+    observer.trigger('send-time', {time: time, idx: runnerIdx});
+})
+
+/*
+    走者再開時
+*/
+observer.on('update-resume-runner', runnerIdx => {
+    runners.value[runnerIdx].time = '';
+})
 
 /*
     オプション情報の更新

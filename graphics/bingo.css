@@ -54,8 +54,19 @@ div.info.r2 {
 }
 */
 div.info {
-    z-index: 99;
+    z-index: 9;
     width: 428px;
     top: 0px;
     left: 426px;
+}
+
+#time {
+    z-index: 90;
+    position: fixed;
+    height: 64px;
+    width: 100%;
+    font-size: 36px;
+    font-weight: bold;
+    top: 328px;
+    left: 0px;
 }
