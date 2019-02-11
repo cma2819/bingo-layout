@@ -60,7 +60,7 @@ module.exports.start = start;
 function initGameTime() {
     liveSplitCore.TimeSpan.fromSeconds(0).with((t) => timer.setLoadingTimes(t));
     timer.initializeGameTime();
-    const existingSeconds = (stopwatch.value.time.raw / 1000) + 36000;
+    const existingSeconds = (stopwatch.value.time.raw / 1000);
     liveSplitCore.TimeSpan.fromSeconds(existingSeconds).with((t) => timer.setGameTime(t));
 }
 /**
