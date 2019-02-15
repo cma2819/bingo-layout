@@ -1,7 +1,151 @@
 {
-    "modeList":[
-        ["video",["4:3","16:9"]],
-        ["bingo",["oot"]],
-        ["text",["left","center","right"]]
+    "modeList": [
+        [
+            "video",
+            [
+                "4:3",
+                "16:9"
+            ]
+        ],
+        [
+            "bingo",
+            [
+                "oot"
+            ]
+        ],
+        [
+            "text",
+            [
+                "left",
+                "center",
+                "right"
+            ]
+        ]
+    ],
+    "bingoSources": [
+        {
+            "name": "時のオカリナ",
+            "url": "oot-bingo",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                },
+                {
+                    "name": "Short",
+                    "param": "short"
+                },
+                {
+                    "name": "BlackOut",
+                    "param": "blackout"
+                }
+            ]
+        },
+        {
+            "name": "ムジュラの仮面",
+            "url": "mm-bingo",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                },
+                {
+                    "name": "Short",
+                    "param": "short"
+                },
+                {
+                    "name": "Long",
+                    "param": "long"
+                }
+            ]
+        },
+        {
+            "name": "スーパーメトロイド",
+            "url": "supermetroid-bingo",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                }
+            ]
+        },
+        {
+            "name": "悪魔城ドラキュラX 月下の夜想曲",
+            "url": "sotn-bingo",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                }
+            ]
+        },
+        {
+            "name": "スーパーマリオ64",
+            "url": "sm64-bingo",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                }
+            ]
+        },
+        {
+            "name": "スーパーマリオワールド",
+            "url": "smw-bingo",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                }
+            ]
+        },
+        {
+            "name": "ポケットモンスター赤／緑",
+            "url": "redblue-bingo",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                }
+            ]
+        },
+        {
+            "name": "ポケットモンスタークリスタル",
+            "url": "crystal-bingo",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                }
+            ]
+        },
+        {
+            "name": "ドンキーコング64",
+            "url": "dk64-bingo",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                }
+            ]
+        }
+    ],
+    "optionList": [
+        {
+            "name": "title_enable",
+            "label": "タイトル表示"
+        },
+        {
+            "name": "bingo_enable",
+            "label": "ビンゴ表示"
+        },
+        {
+            "name": "time_enable",
+            "label": "タイム表示"
+        },
+        {
+            "name": "time_locked",
+            "label": "タイム表示を中央に固定する"
+        }
     ]
 }
