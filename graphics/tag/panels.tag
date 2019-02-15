@@ -1,5 +1,5 @@
 <video-view>
-    <div class="{rowClass} {type}" each="{runner in runners}" style="border-color:{colors[runner.color]}">
+    <div class="{rowClass} {type}" each="{runner,i in runners}" id="panel{i}" style="border-color:{colors[runner.color]}">
         <span class="info" show="{runner.time}" style="background-color:{colors[runner.color]}">{runner.time}</span>
         <span class="name" show="{runner.name}" style="background-color:{colors[runner.color]}">{runner.name}</span>
     </div>
@@ -50,6 +50,10 @@
         }
         .right span, .center span {
             right: 2%;
+        }
+        div.r2#panel1 {
+            position: absolute;
+            bottom: 0px;
         }
 
         span.info {

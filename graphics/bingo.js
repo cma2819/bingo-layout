@@ -36,7 +36,11 @@ nodecg.readReplicant('options', option => {
     nodecg.readReplicant('stopwatch', value => {
         const formatted_time = value.time.formatted.split('.')[0];
         const state = value.state;
-        riot.mount('time', { time: formatted_time, state: state, enable: option['time_enable'] });
+        let locked = '';
+        if (option['time_locked']) {
+            locked = 'locked';
+        }
+        riot.mount('time', { time: formatted_time, state: state, enable: option['time_enable'], locked: locked });
     })
 });
 
@@ -80,7 +84,7 @@ stopwatch.on('change', newVal => {
 options.on('change', newVal => {
     observer.trigger('update-bingo-enable', newVal['bingo_enable']);
     observer.trigger('update-title-enable', newVal['title_enable']);
-    observer.trigger('update-time-enable', newVal['time_enable']);
+    observer.trigger('update-time-option', [newVal['time_enable'], newVal['time_locked']?'locked':'']);
 })
 
 function calcRunnerList(runners) {

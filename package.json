@@ -1,7 +1,7 @@
 {
-  "name": "zelda-party",
-  "version": "0.0.0",
-  "description": "Layout for Zelda-Party Event",
+  "name": "bingo-layout",
+  "version": "0.9.0",
+  "description": "Layout for Race with Bingo",
   "homepage": "",
   "author": {
     "name": "cma",
@@ -22,13 +22,6 @@
     "compatibleRange": "^1.1.1",
     "dashboardPanels": [
       {
-        "name": "zelda-party",
-        "title": "Zelda Party",
-        "width": 4,
-        "file": "index.html",
-        "headerColor": "#bcbcff"
-      },
-      {
         "name": "Bingo",
         "title": "bingo-layout",
         "file": "bingo.html",
@@ -37,11 +30,6 @@
       }
     ],
     "graphics": [
-      {
-        "file": "index.html",
-        "width": 1280,
-        "height": 720
-      },
       {
         "file": "bingo.html",
         "width": 1280,

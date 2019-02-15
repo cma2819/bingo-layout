@@ -1,4 +1,4 @@
-zelda-party is a [NodeCG](http://github.com/nodecg/nodecg) bundle. 
+bingo-layout is a [NodeCG](http://github.com/nodecg/nodecg) bundle. 
 
 It works with NodeCG versions which satisfy this [semver](https://docs.npmjs.com/getting-started/semantic-versioning) range: `^1.1.1`
 
@@ -32,29 +32,29 @@ GitHub（恐らくみなさんが見ているであろうページ）の右上�
 ```
 例：
 bundles
-└─zelda-party
+└─bingo-layout
   └─dashboard
   └─・・・
 ```
 
-格納したら、「zelda-party」フォルダでコマンドプロンプトを起動し、「npm install」を実行してください。
+格納したら、「bingo-layout」フォルダでコマンドプロンプトを起動し、「npm install」を実行してください。
 
 ```
-> cd \bundles\zelda-party
+> cd \bundles\bingo-layout
 > npm install
 ```
 
-以上でインストールは終了（のはず）です。
+以上でインストールは終了です。
 
 ## 設定ファイルの追加
 本レイアウト実行に必要なファイルを格納します。
-`zelda-party`フォルダ直下にある`zelda-party.json`を、NodeCGフォルダ直下の`cfg`フォルダに格納してください。
+`bingo-layout`フォルダ直下にある`bingo-layout.json`を、NodeCGフォルダ直下の`cfg`フォルダに格納してください。
 
 ```
 + NodeCG
   + bundles
   + cfg
-    - zelda-party.json
+    - bingo-layout.json
   + ...
 ```
 

@@ -2,7 +2,7 @@
     <h2>Basic Information</h2>
     <div class="basis-input">
         <label>タイトル
-            <input type="text" name="title" size="60" value="{opts.title}" /></label>
+            <input type="text" name="title" size="40" value="{opts.title}" /></label>
         <label>ゲーム
             <select name="game" onchange="{ changeGame }">
                 <option each={game,i in gameList} value="{i}">{game.name}</option>
@@ -29,40 +29,7 @@
     </style>
 
     <script>
-        this.gameList = [
-            {
-                name: '時のオカリナ',
-                url: 'oot-bingo',
-                mode: [
-                    {
-                        name: 'Normal',
-                        param: 'normal'
-                    },
-                    {
-                        name: 'Short',
-                        param: 'short'
-                    },
-                    {
-                        name: 'BlackOut',
-                        param: 'blackout'
-                    }
-                ]
-            },
-            {
-                name: '時のオカリナ',
-                url: 'oot-bingo',
-                mode: [
-                    {
-                        name: 'Short',
-                        param: 'short'
-                    },
-                    {
-                        name: 'BlackOut',
-                        param: 'blackout'
-                    }
-                ]
-            }
-        ]; // あとでconfig化する
+        this.gameList = opts.gameList;
 
         // モードリスト初期化
         this.modeList = this.gameList[0].mode;

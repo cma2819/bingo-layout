@@ -46,13 +46,6 @@ div.frame.r2 {
 div.frame.r3 {
     width: 426px;
 }
-/*
-div.info.r2 {
-    width: 272px;
-    top: 120px;
-    left: 512px;
-}
-*/
 div.info {
     z-index: 9;
     width: 428px;
@@ -61,12 +54,8 @@ div.info {
 }
 
 #time {
-    z-index: 90;
-    position: fixed;
     height: 64px;
     width: 100%;
     font-size: 36px;
     font-weight: bold;
-    top: 328px;
-    left: 0px;
 }

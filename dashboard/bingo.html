@@ -106,14 +106,14 @@
 	// Replicant
 	const observer = riot.observable();
 	nodecg.readReplicant('title', value => {
-		riot.mount('basis', { observer: observer, title: value });
+		riot.mount('basis', { observer: observer, title: value, gameList: nodecg.bundleConfig.bingoSources });
 	})
 	nodecg.readReplicant('runners', value => {
 		riot.mount('runners', { observer: observer, runners: value});
 		riot.mount('timekeeper', { observer: observer, runners: value});
 	})
 	nodecg.readReplicant('options', value => {
-		riot.mount('options', {observer: observer, options: value});
+		riot.mount('options', {observer: observer, optionList: 	nodecg.bundleConfig.optionList, options: value});
 	})
 </script>
 
