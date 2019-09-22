@@ -23,12 +23,13 @@ observer.on('update-basic-information', (basicInfo) => {
     const seed = basicInfo.seed;
     // ビンゴ情報
     if (seed) {
-        const baseUrl = 'http://www.speedrunslive.com/tools/';
+        const isSrl = basicInfo.game.source === 'srl';
+        const baseUrl = isSrl ? 'http://www.speedrunslive.com/tools/' : '';
         const gameUrl = basicInfo.game.url;
         const seedQuery = '?seed=' + basicInfo.seed;
         const modeQuery = basicInfo.mode == 'normal' ? '' : ('&mode=' + basicInfo.mode);
         const langQuery = '&lang=jp';
-        const bingoUrl = baseUrl + gameUrl + '/' + seedQuery + modeQuery + langQuery;
+        const bingoUrl = baseUrl + gameUrl + seedQuery + modeQuery + langQuery;
         // Extentionに投げる
         nodecg.sendMessage('getBingoList', bingoUrl)
         .then(result => {

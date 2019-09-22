@@ -25,7 +25,8 @@
     "bingoSources": [
         {
             "name": "時のオカリナ",
-            "url": "oot-bingo",
+            "url": "https://ootbingo.github.io/bingo/v9.4/bingo.html",
+            "source": "other",
             "mode": [
                 {
                     "name": "Normal",
@@ -44,6 +45,7 @@
         {
             "name": "ムジュラの仮面",
             "url": "mm-bingo",
+            "source": "srl",
             "mode": [
                 {
                     "name": "Normal",
@@ -62,6 +64,7 @@
         {
             "name": "スーパーメトロイド",
             "url": "supermetroid-bingo",
+            "source": "srl",
             "mode": [
                 {
                     "name": "Normal",
@@ -72,6 +75,7 @@
         {
             "name": "悪魔城ドラキュラX 月下の夜想曲",
             "url": "sotn-bingo",
+            "source": "srl",
             "mode": [
                 {
                     "name": "Normal",
@@ -82,6 +86,7 @@
         {
             "name": "スーパーマリオ64",
             "url": "sm64-bingo",
+            "source": "srl",
             "mode": [
                 {
                     "name": "Normal",
@@ -92,6 +97,7 @@
         {
             "name": "スーパーマリオワールド",
             "url": "smw-bingo",
+            "source": "srl",
             "mode": [
                 {
                     "name": "Normal",
@@ -102,6 +108,7 @@
         {
             "name": "ポケットモンスター赤／緑",
             "url": "redblue-bingo",
+            "source": "srl",
             "mode": [
                 {
                     "name": "Normal",
@@ -112,6 +119,7 @@
         {
             "name": "ポケットモンスタークリスタル",
             "url": "crystal-bingo",
+            "source": "srl",
             "mode": [
                 {
                     "name": "Normal",
@@ -122,6 +130,7 @@
         {
             "name": "ドンキーコング64",
             "url": "dk64-bingo",
+            "source": "srl",
             "mode": [
                 {
                     "name": "Normal",
