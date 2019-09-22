@@ -43,7 +43,7 @@
     "livesplit-core": "^0.10.2",
     "milliseconds": "^1.0.3",
     "parse-ms": "^2.0.0",
-    "puppeteer": "^1.12.2",
+    "puppeteer": "^1.20.0",
     "request": "^2.88.0"
   }
 }
