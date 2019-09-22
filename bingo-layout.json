@@ -43,6 +43,25 @@
             ]
         },
         {
+            "name": "時のオカリナ（v9.5Beta）",
+            "url": "https://ootbingo.github.io/bingo/beta0.9.5.0/bingo.html",
+            "source": "other",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                },
+                {
+                    "name": "Short",
+                    "param": "short"
+                },
+                {
+                    "name": "BlackOut",
+                    "param": "blackout"
+                }
+            ]
+        },
+        {
             "name": "ムジュラの仮面",
             "url": "mm-bingo",
             "source": "srl",
