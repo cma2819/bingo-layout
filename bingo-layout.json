@@ -81,6 +81,25 @@
             ]
         },
         {
+            "name": "ブレスオブザワイルド",
+            "url": "https://jsbotw.web.fc2.com/bingo/plateau_jp.html",
+            "source":"other",
+            "mode": [
+                {
+                    "name": "Normal",
+                    "param": "normal"
+                },
+                {
+                    "name": "Short",
+                    "param": "short"
+                },
+                {
+                    "name": "Long",
+                    "param": "long"
+                }
+            ]
+        },
+        {
             "name": "スーパーメトロイド",
             "url": "supermetroid-bingo",
             "source": "srl",
