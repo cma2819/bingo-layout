@@ -14,7 +14,7 @@
             </select>
         </label>
         <label>Seed
-            <input type="text" name="seed" size="10" maxlength="10" /></label>
+            <input type="text" name="seed" size="10" /></label>
         <button onclick="{ randomSeed }">シード生成</button>
         <button onclick="{ updateBasicInformation }">更新</button>
     </div>
